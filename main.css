@@ -1,0 +1,37 @@
+/* main css file */
+
+/* Define theme colors. */
+:root {
+  --bg-color1: #d7cec7;     /* grain */
+  --bg-color2: #c09f80;     /* tan */
+  --bg-color3: #a3bcc3;     /* light blue */
+  --accent-color1: #76323f; /* oxblood */
+  --accent-color2: #56565c; /* blackboard */
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, san-serif;
+}
+
+.italic { font-style: italic; }
+.bold { font-weight: bold; }
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.white-space { white-space: pre; }
+
+a {
+  text-shadow: none !important;
+  text-decoration: none !important;
+}
+
+img { display: block; margin: auto; max-width: 100%; height: auto; }
+
+#sources { margin-bottom: 16px; }

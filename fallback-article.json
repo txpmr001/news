@@ -1,0 +1,10 @@
+{
+  "articles": [
+    {
+      "title": "YOU'RE OFFLINE!",
+      "url": "",
+      "urlToImage": "images/try-again-later.jpg",
+      "description": "Try loading this news source again when you're back online."
+    }
+  ]
+}
