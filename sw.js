@@ -4,6 +4,8 @@ const staticAssets = [
   './main.css',
   './main.js',
   './fallback-article.json',
+  './images/install.svg',
+  './images/refresh.svg',
   './images/try-again-later.jpg'
 ];
 

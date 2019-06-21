@@ -5,8 +5,9 @@ const selectMain = document.querySelector('main');
 const selectSources = document.querySelector('#sources');
 const defaultSource = 'the-washington-post';
 
-window.addEventListener('load', async event => {
+window.addEventListener('load', async (event) => {
   //console.log('LISTENER window load event');
+
   updateNews();
   await updateSources();
   selectSources.value = defaultSource;
@@ -16,6 +17,10 @@ window.addEventListener('load', async event => {
     updateNews(event.target.value);
   });
 
+  document.getElementById('butRefresh').addEventListener('click', (event) => {
+    console.log('refresh clicked');
+  }); */
+  
   if ('serviceWorker' in navigator) {
     console.log('MAIN.JS serviceWorker in navigator');
     try {
@@ -27,7 +32,7 @@ window.addEventListener('load', async event => {
   } else {
     console.log('MAIN.JS serviceWorker NOT in navigator');
   }
-});
+}); // end window load event ----------
 
 async function updateNews(source = defaultSource) {
   //console.log('MAIN.JS updateNews function, source =', source);
