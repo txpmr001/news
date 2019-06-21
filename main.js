@@ -19,7 +19,7 @@ window.addEventListener('load', async (event) => {
 
   document.getElementById('butRefresh').addEventListener('click', (event) => {
     console.log('refresh clicked');
-  }); */
+  });
   
   if ('serviceWorker' in navigator) {
     console.log('MAIN.JS serviceWorker in navigator');
