@@ -6,7 +6,8 @@ const staticAssets = [
   './fallback-article.json',
   './images/install.svg',
   './images/refresh.svg',
-  './images/try-again-later.jpg'
+  './images/try-again-later.jpg',
+  './favicon.ico'
 ];
 
 self.addEventListener('install', async event => {
@@ -18,9 +19,8 @@ self.addEventListener('install', async event => {
 self.addEventListener('fetch', event => {
   //console.log('SW.JS fetch event, url =', event.request.url);
   const req = event.request;
-  //event.respondWith(cacheFirst(req));
-
   const url = new URL(req.url);
+
   if (url.origin == location.origin) {
     event.respondWith(cacheFirst(req));
   } else {
@@ -32,7 +32,6 @@ async function cacheFirst(req) {
   //console.log('SW.JS cacheFirst function');
   const host = req.url.match('//.+?/')[0].replace(new RegExp('/', 'g'), '');
   const cachedResponse = await caches.match(req);
-  //return cachedResponse || fetch(req);
 
   if (cachedResponse) {
     console.log('   cacheFirst FROM   CACHE, host =', host);

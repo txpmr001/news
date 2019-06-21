@@ -7,7 +7,6 @@ const defaultSource = 'the-washington-post';
 
 window.addEventListener('load', async (event) => {
   //console.log('LISTENER window load event');
-
   updateNews();
   await updateSources();
   selectSources.value = defaultSource;
