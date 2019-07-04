@@ -4,27 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="Description" content="A simple news aggregator.">
-  <meta name="theme-color" content="#317EFB"/>
-  <link rel="stylesheet" href="main.css" />
+  <meta name="theme-color" content="maroon">
+  <link rel="stylesheet" href="css/main.css" />
   <link rel="manifest" href="manifest.json" />
   <title>News</title>
 </head>  
 
 <body>
   <header class="header">
-    <h2 id="heading">News</h2>
+    <h3 id="heading">News</h3>
     <label id = "sources-label" for="sources">Source:</label>
     <select id="sources"></select>
-    <img id="butInstall" src="images/icon-install-40.png" width="40" height="40" aria-label="Install" title="Install">
-    <img id="butRefresh" src="images/icon-refresh-40.png" width="40" height="40" aria-label="Refresh" title="Refresh">
   </header>
+
+  <div id="top"></div>
+
+  <div id="installDialog" class="notification">
+    <div class="notification-a">
+      <h2>Upgrade to the Blessed Sacrament App:</h2>
+      <ul>
+        <li>Faster Response Times</li>
+        <li>Offline Access</li>
+        <li>Look 10 Years Younger</li>
+      </ul>
+    </div>
+    <div class="notification-b">
+      <button id="installButton" type="button" aria-label="Install"><h3>Install</h3></button>
+    </div>
+  </div>
 
   <main>
   </main>
 
-  <script src="main.js"></script>
-  <script src="install.js"></script>
-
-  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>  
+  <script src="js/main.js"></script>
+  <script src="js/install.js"></script>
 </body>
 </html>

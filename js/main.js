@@ -6,42 +6,36 @@ const selectSources = document.querySelector('#sources');
 const defaultSource = 'the-washington-post';
 
 window.addEventListener('load', async (event) => {
-  //console.log('LISTENER window load event');
   updateNews();
   await updateSources();
   selectSources.value = defaultSource;
   
   selectSources.addEventListener('change', event => {
-    //console.log('LISTENER selectSources change event');
     updateNews(event.target.value);
   });
 
-  document.getElementById('butRefresh').addEventListener('click', (event) => {
-    console.log('refresh clicked');
-  });
-  
+  //document.getElementById('butRefresh').addEventListener('click', (event) => {
+  //  console.log('refresh clicked');
+  //});
+
   if ('serviceWorker' in navigator) {
-    console.log('MAIN.JS serviceWorker in navigator');
-    try {
-      navigator.serviceWorker.register('sw.js');
-      console.log('MAIN.JS service worker sw.js registered');
-    } catch (error) {
-      console.log('MAIN.JS service worker sw.js NOT registered');
-    }
-  } else {
-    console.log('MAIN.JS serviceWorker NOT in navigator');
-  }
+    navigator.serviceWorker.register('sw.js')
+      .then(registration => {
+        console.log(`Service Worker registered! Scope: ${registration.scope}`);
+      })
+      .catch(err => {
+        console.log(`Service Worker registration failed: ${err}`);
+      });
+  };
 }); // end window load event ----------
 
 async function updateNews(source = defaultSource) {
-  //console.log('MAIN.JS updateNews function, source =', source);
   const res = await fetch(`https://newsapi.org/v1/articles?source=${source}&apiKey=${apiKey}`);
   const json = await res.json();
   selectMain.innerHTML = json.articles.map(createArticle).join('\n');
 }
 
 async function updateSources() {
-  //console.log('MAIN.JS updateSources function');
   const res = await fetch(`https://newsapi.org/v1/sources`);
   const json = await res.json();
   selectSources.innerHTML = json.sources
@@ -49,7 +43,6 @@ async function updateSources() {
 }
 
 function createArticle(article) {
-  //console.log('MAIN.JS createArticle function');
   return `
     <div class="article">
       <a href="${article.url}">

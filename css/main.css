@@ -34,7 +34,7 @@ a {
 
 img { display: block; margin: auto; max-width: 100%; height: auto; }
 
-/** Header **/
+/** fixed header **/
 
 .header {
   position: fixed;
@@ -54,25 +54,36 @@ img { display: block; margin: auto; max-width: 100%; height: auto; }
 
 .header #sources { margin-right: auto; }
 
-.header #butInstall {
-  display: none;
-  margin: 0;
-  padding-right: 15px;
-}
-
 .header #butRefresh {
   margin: 0;
   padding-right: 15px;
-}
-
-.header #butInstall:hover {
-  cursor: pointer;
 }
 
 .header #butRefresh:hover {
   cursor: pointer;
 }
 
-main {
-	padding-top: 60px;
+#top {
+  margin-top: 75px;
+}
+
+/* installation dialog */
+
+#installDialog { display: none; }
+.notification {
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: lightgray;
+}
+.notification-a { flex-grow: 5; padding: 0px 10px; }
+.notification-b { flex-grow: 1; padding-right: 10px; text-align: center; }
+
+.notification h2 { margin: 10px 0px; }
+.notification ul { list-style-position: inside; padding-left: 10px; }
+.notification li { padding-bottom: 3px; }
+.notification button {
+  color: maroon;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 2px #aaa;
 }

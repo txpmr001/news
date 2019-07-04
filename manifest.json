@@ -1,8 +1,8 @@
 {
   "name": "News",
   "short_name": "News",
-  "theme_color": "#59799a",
-  "background_color": "#d4d5df",
+  "theme_color": "maroon",
+  "background_color": "lightgray",
   "display": "standalone",
   "scope": "/",
   "start_url": ".",
@@ -47,6 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
